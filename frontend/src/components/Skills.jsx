@@ -1,5 +1,6 @@
 import React from "react";
 import { skills } from "../mock";
+import { Cloud, Container, GitBranch, Server, Settings } from "lucide-react";
 
 function Bar({ name, level }) {
   return (
@@ -18,39 +19,86 @@ function Bar({ name, level }) {
   );
 }
 
+const focusCards = [
+  {
+    icon: Cloud,
+    title: "Cloud Platforms",
+    desc: "AWS & Azure fundamentals — compute, storage, IAM and networking basics applied to real workloads.",
+  },
+  {
+    icon: Container,
+    title: "Docker & Containers",
+    desc: "Multi-stage Dockerfiles, container registries and lightweight images for fast, repeatable deploys.",
+  },
+  {
+    icon: GitBranch,
+    title: "CI/CD Pipelines",
+    desc: "GitHub Actions workflows that lint, test, build and ship — with rollback and health checks.",
+  },
+  {
+    icon: Settings,
+    title: "ServiceNow Admin",
+    desc: "ITSM workflows, business rules, ACLs and form customisation across dev/test instances.",
+  },
+];
+
 export default function Skills() {
   return (
     <section id="skills" className="py-24 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
           <div>
-            <div className="text-xs uppercase tracking-[0.2em] text-[#C8893B] mb-3">02 — Skills</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-[#C8893B] mb-3">
+              02 — Skills
+            </div>
             <h2 className="font-display text-4xl lg:text-5xl text-[#0E1B2C] leading-tight">
-              Tools I use<br />to ship reliable work.
+              Built around the<br />
+              <em className="text-[#C8893B] not-italic">cloud stack</em>.
             </h2>
           </div>
           <p className="max-w-md text-[#3A4A60]">
-            A practical mix of programming fundamentals, ML / DL frameworks, and modern
-            developer tooling — picked up through coursework, internships, and personal projects.
+            My primary focus is Cloud, DevOps automation, and ServiceNow administration —
+            backed by solid fundamentals in Linux, scripting and data tooling.
           </p>
         </div>
 
+        {/* Focus area cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          {focusCards.map((c) => (
+            <div
+              key={c.title}
+              className="bg-white border border-[#E7DFD2] rounded-2xl p-6 hover:border-[#C8893B] hover:-translate-y-0.5 btn-trans"
+              style={{ transition: "transform 0.25s ease, border-color 0.25s ease" }}
+            >
+              <div className="w-11 h-11 rounded-xl bg-[#0E1B2C] text-[#C8893B] grid place-items-center mb-4">
+                <c.icon className="w-5 h-5" />
+              </div>
+              <div className="font-display text-lg text-[#0E1B2C] mb-1.5">{c.title}</div>
+              <p className="text-sm text-[#3A4A60] leading-relaxed">{c.desc}</p>
+            </div>
+          ))}
+        </div>
+
         <div className="grid lg:grid-cols-3 gap-6">
-          <div className="bg-white border border-[#E7DFD2] rounded-2xl p-7">
-            <div className="font-mono text-xs text-[#C8893B] mb-5">// languages</div>
+          <div className="bg-white border border-[#E7DFD2] rounded-2xl p-7 lg:col-span-1">
+            <div className="font-mono text-xs text-[#C8893B] mb-5">// primary stack</div>
             <div className="space-y-5">
-              {skills.languages.map((s) => <Bar key={s.name} {...s} />)}
+              {skills.primary.map((s) => (
+                <Bar key={s.name} {...s} />
+              ))}
             </div>
           </div>
 
-          <div className="bg-white border border-[#E7DFD2] rounded-2xl p-7">
-            <div className="font-mono text-xs text-[#C8893B] mb-5">// core areas</div>
+          <div className="bg-white border border-[#E7DFD2] rounded-2xl p-7 lg:col-span-1">
+            <div className="font-mono text-xs text-[#C8893B] mb-5">// supporting skills</div>
             <div className="space-y-5">
-              {skills.core.map((s) => <Bar key={s.name} {...s} />)}
+              {skills.secondary.map((s) => (
+                <Bar key={s.name} {...s} />
+              ))}
             </div>
           </div>
 
-          <div className="bg-[#0E1B2C] text-[#FAF7F2] rounded-2xl p-7">
+          <div className="bg-[#0E1B2C] text-[#FAF7F2] rounded-2xl p-7 lg:col-span-1">
             <div className="font-mono text-xs text-[#C8893B] mb-5">// tools &amp; libraries</div>
             <div className="flex flex-wrap gap-2">
               {skills.tools.map((t) => (
@@ -66,7 +114,12 @@ export default function Skills() {
               <div className="font-mono text-xs text-[#C8893B] mb-3">// soft skills</div>
               <div className="flex flex-wrap gap-2">
                 {skills.soft.map((s) => (
-                  <span key={s} className="px-3 py-1 rounded-full text-xs text-[#D6DCE4] border border-[#23344B]">{s}</span>
+                  <span
+                    key={s}
+                    className="px-3 py-1 rounded-full text-xs text-[#D6DCE4] border border-[#23344B]"
+                  >
+                    {s}
+                  </span>
                 ))}
               </div>
             </div>

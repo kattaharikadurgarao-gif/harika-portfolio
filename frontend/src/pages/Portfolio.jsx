@@ -10,8 +10,8 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 const marqueeWords = [
-  "Python", "Machine Learning", "Deep Learning", "Scikit-learn", "PyTorch",
-  "OpenCV", "Docker", "CI/CD", "SQL", "Power BI", "Data Analytics", "Cloud",
+  "AWS", "Docker", "CI/CD", "ServiceNow", "GitHub Actions", "Linux",
+  "Cloud", "Kubernetes basics", "Bash", "ITSM", "Python", "Git",
 ];
 
 export default function Portfolio() {

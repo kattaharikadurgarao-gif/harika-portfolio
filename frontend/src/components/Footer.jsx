@@ -17,7 +17,7 @@ export default function Footer() {
               Let's work together.
             </div>
             <p className="text-[#A8B3C2] max-w-md">
-              Currently open to entry-level Data / ML Engineer and analytics roles.
+              Currently open to entry-level Cloud / DevOps and ServiceNow Administrator roles.
               Available remotely or on-site across India.
             </p>
             <a

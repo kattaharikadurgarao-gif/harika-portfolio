@@ -41,8 +41,8 @@ export default function Contact() {
               Let's build<br />something great.
             </h2>
             <p className="text-[#3A4A60] text-lg leading-relaxed mb-10">
-              Have an opening for a Data / ML engineer, an internship, or a freelance brief?
-              Drop a message — I usually reply within a day.
+              Have an opening for a Cloud / DevOps engineer or ServiceNow Administrator,
+              an internship, or a freelance brief? Drop a message — I usually reply within a day.
             </p>
 
             <ul className="space-y-5">

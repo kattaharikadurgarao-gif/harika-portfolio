@@ -10,8 +10,8 @@ export default function About() {
         <div className="lg:col-span-4">
           <div className="text-xs uppercase tracking-[0.2em] text-[#C8893B] mb-4">01 — About</div>
           <h2 className="font-display text-4xl lg:text-5xl leading-tight">
-            A builder who sees<br />
-            <em className="text-[#C8893B] not-italic">patterns in data</em>.
+            A builder who lives in the<br />
+            <em className="text-[#C8893B] not-italic">cloud terminal</em>.
           </h2>
         </div>
 
@@ -22,15 +22,15 @@ export default function About() {
             <div className="border-l-2 border-[#C8893B] pl-5">
               <div className="text-sm uppercase tracking-wider text-[#C8893B] mb-1">What I do</div>
               <p className="text-[#D6DCE4] text-sm leading-relaxed">
-                Build, evaluate and ship machine-learning models. Wire up data pipelines.
-                Containerise services and automate their delivery with CI/CD.
+                Build and operate cloud-native systems. Containerise services with Docker,
+                automate delivery via CI/CD, and administer ServiceNow ITSM platforms end-to-end.
               </p>
             </div>
             <div className="border-l-2 border-[#C8893B] pl-5">
               <div className="text-sm uppercase tracking-wider text-[#C8893B] mb-1">What I value</div>
               <p className="text-[#D6DCE4] text-sm leading-relaxed">
-                Reproducibility, clean code, and a willingness to ask the dumb question —
-                that's usually where the real bug lives.
+                Reliability, reproducibility and clean runbooks. If a deploy isn't boring,
+                the pipeline still has work to do.
               </p>
             </div>
           </div>
@@ -38,8 +38,7 @@ export default function About() {
           <div className="mt-10 p-6 rounded-2xl bg-[#16263B] border border-[#23344B] flex gap-4">
             <Quote className="w-8 h-8 text-[#C8893B] shrink-0" />
             <p className="text-[#D6DCE4] italic text-base leading-relaxed">
-              “I'm motivated by the fact that a small change in a feature pipeline can lift
-              a model's accuracy by several points — details matter.”
+              “A good cloud engineer makes the deploy boring on purpose — that's where reliability lives.”
             </p>
           </div>
         </div>
