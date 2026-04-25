@@ -15,7 +15,7 @@ export const profile = {
   email: "kattaharikadurgarao@gmail.com",
   phone: "+91-9347580293",
   github: "https://github.com/",
-  linkedin: "https://linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/katta-harika-23522a270/",
   resumeUrl: "#",
   available: true,
 };
