@@ -14,9 +14,9 @@ export const profile = {
   location: "Nellore, Andhra Pradesh, India",
   email: "kattaharikadurgarao@gmail.com",
   phone: "+91-9347580293",
-  github: "https://github.com/",
+  github: "https://github.com/kattaharikadurgarao-gif",
   linkedin: "https://www.linkedin.com/in/katta-harika-23522a270/",
-  resumeUrl: "#",
+  resumeUrl: "https://customer-assets.emergentagent.com/job_pro-profile-80/artifacts/84ln5hlh_KATTAHARIKA%20RESUME.pdf",
   available: true,
 };
 

@@ -84,7 +84,7 @@ export default function Contact() {
               <a href={profile.linkedin} target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full border border-[#E7DFD2] grid place-items-center text-[#0E1B2C] hover:bg-[#0E1B2C] hover:text-[#FAF7F2] btn-trans">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href={profile.resumeUrl} className="h-11 px-4 rounded-full border border-[#E7DFD2] flex items-center gap-2 text-[#0E1B2C] hover:bg-[#0E1B2C] hover:text-[#FAF7F2] btn-trans text-sm">
+              <a href={profile.resumeUrl} target="_blank" rel="noreferrer" download="Harika_Katta_Resume.pdf" className="h-11 px-4 rounded-full border border-[#E7DFD2] flex items-center gap-2 text-[#0E1B2C] hover:bg-[#0E1B2C] hover:text-[#FAF7F2] btn-trans text-sm">
                 Download CV <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
