@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { profile } from "../mock";
 import { Mail, Phone, MapPin, Send, Github, Linkedin, ArrowUpRight } from "lucide-react";
 import { Button } from "./ui/button";
@@ -7,28 +8,42 @@ import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { toast } from "sonner";
 
+const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [sending, setSending] = useState(false);
 
   const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
       toast.error("Please fill name, email and message.");
       return;
     }
     setSending(true);
-    setTimeout(() => {
-      // Persist locally so the experience feels real until backend is wired.
-      const all = JSON.parse(localStorage.getItem("hk_messages") || "[]");
-      all.unshift({ ...form, at: new Date().toISOString() });
-      localStorage.setItem("hk_messages", JSON.stringify(all));
+    try {
+      await axios.post(`${API}/contact`, {
+        name: form.name.trim(),
+        email: form.email.trim(),
+        subject: form.subject.trim() || null,
+        message: form.message.trim(),
+      });
       setForm({ name: "", email: "", subject: "", message: "" });
+      toast.success("Message sent! Harika will get back to you within 24 hours.");
+    } catch (err) {
+      const detail = err?.response?.data?.detail;
+      const msg =
+        typeof detail === "string"
+          ? detail
+          : Array.isArray(detail) && detail[0]?.msg
+          ? detail[0].msg
+          : "Could not send message. Please try again or email directly.";
+      toast.error(msg);
+    } finally {
       setSending(false);
-      toast.success("Message sent! I'll get back to you within 24 hours.");
-    }, 700);
+    }
   };
 
   return (

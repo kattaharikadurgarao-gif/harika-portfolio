@@ -1,0 +1,22 @@
+# Render blueprint — deploy FastAPI backend in one click
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: harika-portfolio-api
+    runtime: python
+    plan: free
+    region: oregon
+    branch: main
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn server:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /api/
+    envVars:
+      - key: MONGO_URL
+        sync: false           # Set manually to your MongoDB Atlas URI
+      - key: DB_NAME
+        value: harika_portfolio
+      - key: CORS_ORIGINS
+        sync: false           # Set to your Vercel / Netlify frontend URL
+      - key: PYTHON_VERSION
+        value: 3.11.9
